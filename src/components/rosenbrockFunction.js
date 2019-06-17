@@ -11,7 +11,7 @@ function rosenbrockValue(a,b,x,y){
     return Math.pow(a-x,2) + b*Math.pow(y-x*x,2)
 }
 
-function getRosenbrock2D(a,b) {
+function getRosenbrock2D(a,b, size) {
     const SPACE_SIZE = 100
     const arr = []
     // let spaceMax = 0;
@@ -25,10 +25,15 @@ function getRosenbrock2D(a,b) {
             // }
         }    
     }
-
-    console.log(`function call: getRosenbrock2D(${a},${b})`)
-    // console.log(`function call: MAX(${spaceMax})`)
-    return arr;
+    
+    const spaceObject = {
+        data: arr,
+        dimensions: [ {min: 0, max: SPACE_SIZE}, {min: 0, max: SPACE_SIZE} ]
+    }
+    
+    
+    console.log(`function call: getRosenbrock2D(${spaceObject})`)
+    return spaceObject;
 
 }
 

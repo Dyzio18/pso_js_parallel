@@ -40,6 +40,11 @@ class canvas {
     getData(){
         return this._ctx.getImageData(0,0,this._w,this._h)
     }
+
+    drawParticle(x,y){
+        this._ctx.fillStyle = 'red';
+        this._ctx.fillRect(x,y,1,1); 
+    }
   
     static staticMethod() {
       return 'staticMethod';
